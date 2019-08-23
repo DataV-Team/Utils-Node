@@ -134,9 +134,7 @@ export default {
     buttonGroup
   },
   mounted () {
-    const create = confirm('Create an audioContext!')
-
-    if (create) this.init()
+    this.init()
   },
   methods: {
     init () {
