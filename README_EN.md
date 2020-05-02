@@ -34,5 +34,5 @@ import { getCmdParams } from '@jiaminghi/utils-node'
 #### getCmdParams
 
 ```typescript
-type getNodeParams = () => any
+type getCmdParams = () => any
 ```
