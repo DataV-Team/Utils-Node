@@ -1,7 +1,5 @@
 .DS_Store
 node_modules
-deploy/index.js
-/dist
 
 # local env files
 .env.local
@@ -11,14 +9,3 @@ deploy/index.js
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
-yarn.lock
-
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?

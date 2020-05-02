@@ -1,32 +1,48 @@
 {
-  "name": "demo.jiaminghi.com",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@jiaminghi/utils-node",
+  "version": "0.0.1",
+  "author": "JiaMing <743192023@qq.com>",
+  "description": "Node utils",
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiaming743/utils-node.git"
+  },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "deploy": "node deploy/index.js",
-    "lint": "vue-cli-service lint"
+    "clean": "rimraf lib types",
+    "type:check": "tsc --noEmit",
+    "lint": "eslint --ext js,ts src",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "check": "npm run type:check && npm run lint && npm run format:check",
+    "build": "tsc",
+    "prepare": "npm run clean && npm run check && npm run build"
   },
-  "dependencies": {
-    "@jiaminghi/bezier-curve": "^0.0.6",
-    "@jiaminghi/color": "^0.1.0",
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.3"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run check",
+      "pre-push": "npm run check"
+    }
   },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jiaming743/utils-node/issues"
+  },
+  "keywords": [
+    "utils",
+    "node"
+  ],
+  "dependencies": {},
+  "homepage": "https://github.com/jiaming743/utils-node#readme",
   "devDependencies": {
-    "@jiaminghi/fs": "0.0.2",
-    "@vue/cli-plugin-babel": "^3.10.0",
-    "@vue/cli-plugin-eslint": "^3.10.0",
-    "@vue/cli-service": "^3.10.0",
-    "@vue/eslint-config-standard": "^4.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "ftp": "^0.3.10",
-    "less": "^3.0.4",
-    "less-loader": "^4.1.0",
-    "vue-template-compiler": "^2.6.10"
+    "@types/node": "^13.13.4",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.8.3"
   }
 }

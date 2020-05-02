@@ -1,17 +1,36 @@
 module.exports = {
-  root: true,
+  parser: '@typescript-eslint/parser',
+
+  plugins: ['@typescript-eslint'],
+
   env: {
-    node: true
+    es6: true,
   },
-  'extends': [
-    'plugin:vue/essential',
-    '@vue/standard'
-  ],
+
+  extends: ['plugin:@typescript-eslint/recommended'],
+
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts'],
+    },
+    'import/resolver': {
+      // use <root>/tsconfig.json
+      typescript: {},
+    },
+  },
+
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/member-delimiter-style': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        args: 'after-used',
+        ignoreRestSiblings: true,
+        argsIgnorePattern: '^_', // ignore unused variables whose name is '_'
+      },
+    ],
   },
-  parserOptions: {
-    parser: 'babel-eslint'
-  }
 }

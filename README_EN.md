@@ -1,4 +1,4 @@
-[ENGLISH](./README_EN.md)
+[中文](./README.md)
 
 <h1 align="center">Utils-Node</h1>
 
@@ -15,13 +15,13 @@
 
 - **[getCmdParams](#getCmdParams)**
 
-### npm 安装
+### Install with npm
 
 ```shell
 $ npm install @jiaminghi/utils-node
 ```
 
-### 使用
+### Use
 
 ```typescript
 import { getCmdParams } from '@jiaminghi/utils-node'
@@ -29,7 +29,7 @@ import { getCmdParams } from '@jiaminghi/utils-node'
 // do something
 ```
 
-<h3 align="center">示例</h3>
+<h3 align="center">Examples</h3>
 
 #### getCmdParams
 
